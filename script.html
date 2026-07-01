@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        < !DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>setTimeout Message</title></head><body><h1>setTimeout Example</h1><button onclick="showLater()">Show Message After 3 Seconds</button><p id="message">Waiting...</p><script>function showLater() {
+            document.getElementById("message").textContent="Timer started...";
+
+            setTimeout(function () {
+                    document.getElementById("message").textContent="Hello! I appeared after 3 seconds.";
+                }
+                , 3000);
+        }
+
+        </script></body></html>.container {
+            display: flex;
+            gap: 10px;
+
+        }
+
+        img {
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="button" value="click" onclick="counter()">
+
+
+
+    <div class="container">
+        <img id="t1" src="6.jpg">
+        <img id="t2" src="7.jpg">
+        <img id="t3" src="8.jpg">
+    </div>
+    <script>
+
+        let count = 0;
+        const total = 9;
+
+        const t1 = document.getElementById("t1");
+        const t2 = document.getElementById("t2");
+        const t3 = document.getElementById("t3");
+
+        function counter() {
+
+            t1.src = `${count % total}.jpg`;
+            t2.src = `${(count + 1) % total}.jpg`;
+            t3.src = `${(count + 2) % total}.jpg`;
+            count++;
+            if (count > 8)
+                count = 0;
+        }
+        let loop = setInterval("counter()", 1000);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

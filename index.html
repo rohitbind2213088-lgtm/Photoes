@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: lightcyan;
+        }
+
+        img {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 550px;
+            height: 400px;
+            padding: 10px;
+
+        }
+
+        input {
+            background-color: lightcyan;
+            border-radius: 10px;
+            width: 200px;
+            height: 30px;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+         
+    <input type="text" id="t1">
+    <input type="button" value="click" onclick="counter()">
+
+    <img id="im" src="4.jpg">
+    <script>
+
+        let count = 0;
+        const t = document.getElementById("t1");
+        const im = document.getElementById("im");
+        function counter() {
+            //alert(10);
+            t.value = count;
+            im.src = `${count}.jpg`;
+            count++;
+            if (count >8)
+                count = 0;
+        }
+        let loop = setInterval("counter()", 1000);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

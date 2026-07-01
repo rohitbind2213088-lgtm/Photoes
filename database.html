@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script Objects</title>
+    <script>
+        var result = {
+            Roll No: "10",
+            name: "rohit",
+            clstdass: 10
+
+            //discountedprice:function(){return this.price-10;};
+        };
+        function f() {
+            document.getElementById("txtRoll No").value =result.Roll No;
+            document.getElementById("txtname").value = result['rohit'];
+            
+            // alert(book.discountedprice());
+        }
+        function f1() {
+            book.name = document.getElementById("txtRoll No").value;
+            book['subject'] = document.getElementById("txtname").value;
+            book.price = document.getElementById("txtclass").value;
+
+        }
+    </script>
+</head>
+
+<body>
+    Roll No<input type="text" id="txtRoll No" />
+    <br />
+    Name<input type="text" id="txtname" />
+    <br />
+    class<input type="text" id="txtclass" />
+    <br />
+    <input type="button" onclick="f()" value="Find" />
+    <input type="button" onclick="f1()" value="Set" />
+</body>
+
+</html>

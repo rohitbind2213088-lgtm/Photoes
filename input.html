@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Objects</title>
+
+    <style>
+
+         .container{
+                     
+                    background-color: aqua;
+                    
+
+         }
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+       <div class="container"> 
+    Book Name <input type="text" id="txtBookName"><br><br>
+    Subject <input type="text" id="txtSubject"><br><br>
+    Price <input type="text" id="txtPrice"><br><br>
+    Discounted Price <input type="text" id="txtDiscountedPrice"><br><br>
+
+    <input type="button" value="<<" onclick="back()">
+    <input type="button" value=">>" onclick="next()">
+      </div>
+<script>
+    var book = [
+        {
+            name: "Basic C",
+            subject: "C",
+            price: 50,
+            discount: 10,
+            discountedPrice: function () {
+                return (100 - this.discount) * this.price / 100;
+            }
+        },
+        {
+            name: "Basic C++",
+            subject: "C++",
+            price: 70,
+            discountedPrice: function () {
+                return this.price - 10;
+            }
+        }
+    ];
+
+    var i = 0;
+
+    function showBook() {
+        document.getElementById("txtBookName").value = book[i].name;
+        document.getElementById("txtSubject").value = book[i].subject;
+        document.getElementById("txtPrice").value = book[i].price;
+        document.getElementById("txtDiscountedPrice").value = book[i].discountedPrice();
+    }
+
+    function next() {
+        if (i < book.length - 1) {
+            i++;
+        }
+        showBook();
+    }
+
+    function back() {
+        if (i > 0) {
+            i--;
+        }
+        showBook();
+    }
+
+    showBook();
+</script>
+
+</body>
+</html>

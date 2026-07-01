@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debounced Search</title>
+</head>
+<body>
+  <h1>Debounced Search</h1>
+
+  <input id="search" type="text" placeholder="Type to search..." />
+
+  <p id="output">Search result will appear here.</p>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const output = document.getElementById("output");
+
+    let timerId = null;
+
+    searchInput.addEventListener("input", function () {
+      output.textContent = "Typing...";
+
+      clearTimeout(timerId);
+
+      timerId = setTimeout(function () {
+        output.textContent =
+          "Searching for: " + searchInput.value;
+      }, 600);
+    });
+  </script>
+</body>
+</html>

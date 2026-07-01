@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   <style>
+  
+
+          body{
+                 background-color: aqua;
+          }
+
+
+
+   </style>
+
+
+
+</head>
+
+<body>
+
+    <h1>Counter</h1>
+
+    <h2 id="counter">0</h2>
+
+    <button onclick="startCounter()">Start</button>
+    <button onclick="stopCounter()">Stop</button>
+    <button onclick="resetCounter()">Reset</button>
+
+
+    <p id="status">Stopped.</p>
+
+    <script>
+
+        let count = 30;
+        let intervalId = null;
+
+
+        function startCounter() {
+
+            if(intervalId !== null) {
+                document.getElementById("status").textContent =
+                    "Already running.";
+                return;
+            }
+
+            document.getElementById("status").textContent = "Running...";
+
+            intervalId = setInterval(function () {
+                count--;
+                if(count<0)
+            {
+                clearInterval(intervalId);
+                alert("Done")
+                return;
+            }
+                document.getElementById("counter").textContent = count;
+            },1000);
+        }
+
+        function stopCounter() {
+            clearInterval(intervalId);
+            intervalId = null;
+            document.getElementById("status").textContent = "Stopped.";
+        }
+
+        function resetCounter() {
+            stopCounter();
+            count =0;
+            document.getElementById("counter").textContent = count;
+            document.getElementById("status").textContent = "Reset.";
+        }
+    </script>
+
+
+
+
+    </script>
+
+</body>
+
+</html>

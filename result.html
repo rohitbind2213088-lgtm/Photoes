@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reverse Text Color with var() and calc()</title>
+
+</head>
+
+<body>
+   
+  Name <input type="text" id="txtName">
+  <br>
+  age <input type="text" id="txtage">
+  <br>
+  rollno<input type="text" id="txtrollno">
+   <br>
+   <img width="150"  id="txtimg">
+   <br>
+  <input type="button" value="Get" onclick="f()">
+  
+  <script>
+    const tname = document.getElementById("txtName");
+    const tage = document.getElementById("txtage");
+    const trollno= document.getElementById("txtrollno");
+    const timg =document.getElementById("txtimg");
+    
+    var student = {
+      
+      name: "rohit",
+      age: "18",
+       rollno: "10",
+       picture: "1.jpg"
+    };
+    function f() {
+      tname.value = student.name;
+      tage.value = student.age;
+      trollno.value =student.rollno;
+      timg.src= student.picture;
+    }
+
+  </script>
+</body>
+
+</html>

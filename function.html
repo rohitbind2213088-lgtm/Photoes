@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>setTimeout Message</title>
+</head>
+<body>
+  <h1>setTimeout Example</h1>
+
+  <button onclick="showLater()">Show Message After 3 Seconds</button>
+
+  <p id="message">Waiting...</p>
+
+  <script>
+    function showLater() {
+        
+      document.getElementById("message").textContent = "Timer started...";
+
+      setTimeout(function () {
+        document.getElementById("message").textContent =
+          "Hello! I appeared after 3 seconds.";
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
